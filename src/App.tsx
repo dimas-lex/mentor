@@ -1,5 +1,6 @@
 import React from 'react';
 import logo from './logo.svg';
+import { MyForm } from './components/MyForm';
 import './App.css';
 
 const App: React.FC = () => {
@@ -10,14 +11,13 @@ const App: React.FC = () => {
         <p>
           Edit <code>src/App.tsx</code> and save to reload.
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+        <MyForm
+          className="App-link" 
+          firstName='name'
+          lastName='last'
         >
           Learn React
-        </a>
+        </MyForm>
       </header>
     </div>
   );
