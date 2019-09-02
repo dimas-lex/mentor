@@ -11,14 +11,18 @@ export class MyForm  extends React.Component<MyFormInterface, FormState> {
     render() {
         
         const attributes = {
-            tabindex: this.props.tabIndex,
-            ["aria-label"]: this.props["aria-label"]
+            tabIndex: this.props.tabIndex,
+            "aria-label": this.props["aria-label"]
         };
 
         return (
             <div {...attributes}>
                 test
-                <InputField label="Some label" validationFn={(val: string)  => (String(val).length > 3)} />
+                <InputField label="Some label" 
+                    validationFn={(val: string)  => (String(val).length > 3)}
+                    onChange={(ev) => {
+                        console.log(ev)
+                    }} />
             </div>
         );
     }
