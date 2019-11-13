@@ -2,6 +2,7 @@ import * as React from 'react';
 import { FormState } from '../../types/FormState';
 import { FormProps } from '../../types/FormProps'; 
 
+import {Wrapper} from '../wrapper';
 import InputField from '../InputField';
 import InputTextField from '../InputTextField';
  
@@ -29,12 +30,14 @@ export class MyForm  extends React.Component<MyFormInterface, FormState> {
         return (
             <div {...attributes}>
                 test
-                <InputField 
-                    label="Some label" 
-                    validationFn={(val: string)  => (String(val).length > 3)}
-                    onChange={(ev) => {
-                        console.log(ev)
-                    }} />
+                <Wrapper label="Text" value="value" >
+                    <InputField 
+                        label="Some label" 
+                        validationFn={(val: string)  => (String(val).length > 3)}
+                        onChange={(ev) => {
+                            console.log(ev)
+                        }} />
+                </Wrapper>
                 <InputTextField
                     label="Some label with State" 
                     value={this.state.address || ''} 
